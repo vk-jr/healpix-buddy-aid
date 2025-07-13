@@ -1,73 +1,109 @@
-# Welcome to your Lovable project
+Got it! Here's your **full combined `README.md` content** as a single, clean, copy-pasteable Markdown file — no formatting fragments or code block issues. You can copy the entire content below into your `README.md`:
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/0ba5aa53-c7e3-4a53-ab21-7698e14e8ff8
+````markdown
+# 🩺 Healpix Buddy Aid
 
-## How can I edit this code?
+**Healpix Buddy Aid** is an AI-powered medical assistant web app that helps users by analyzing medical images and providing basic first aid suggestions. Built using a modern and efficient tech stack, it delivers excellent developer experience and blazing-fast performance.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🧩 Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0ba5aa53-c7e3-4a53-ab21-7698e14e8ff8) and start prompting.
+- **Frontend**: React.js (with TypeScript)
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Compiler**: SWC (via `@vitejs/plugin-react-swc`)
+- **Development Tools**: HMR, Component Tagger
+- **Alias Support**: `@` mapped to `src/`
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🚀 Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js (v16+ recommended)
+- npm / yarn / pnpm
 
-Follow these steps:
+### Installation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```bash
+git clone https://github.com/yourusername/healpix-buddy-aid.git
+cd healpix-buddy-aid
+npm install   # or yarn / pnpm install
+````
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Run Development Server
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Starts the app at `http://[::1]:8080` (IPv6 enabled by default)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 🛠️ Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   ├── routes/
+│   ├── styles/
+│   └── main.tsx
+├── index.html
+├── tsconfig.json
+└── vite.config.ts
+```
 
-## What technologies are used for this project?
+* `@` alias maps to the `src/` directory to simplify imports.
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 💡 Features
 
-## How can I deploy this project?
+### ✅ Core Functionality
 
-Simply open [Lovable](https://lovable.dev/projects/0ba5aa53-c7e3-4a53-ab21-7698e14e8ff8) and click on Share -> Publish.
+* Upload medical images for AI analysis
+* Receive first aid suggestions instantly
+* Responsive, clean UI for a smooth experience
 
-## Can I connect a custom domain to my Lovable project?
+### ⚙️ Developer Experience
 
-Yes, you can!
+* Type-safe development using TypeScript
+* Hot Module Replacement (HMR) for fast iteration
+* Tailwind CSS for styling with utility-first classes
+* Path aliasing for better file import management
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### 🚧 Error Handling
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+* Custom 404 page (`NotFound.tsx`) for missing routes
+* Console logging for debugging in development
+* Friendly error messages for users
+
+---
+
+## 🏗️ Production
+
+### Build the App
+
+```bash
+npm run build
+```
+
+Generates an optimized production build for modern browsers.
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+Launches a local server to test the built version.
+
+---
