@@ -1,51 +1,84 @@
 
-import { Heart, Stethoscope, Sparkles } from 'lucide-react';
+import { Heart, Stethoscope, Sparkles, Activity } from 'lucide-react';
 
 export const Header = () => {
   return (
     <div className="text-center mb-8 sm:mb-12 lg:mb-16 relative">
-      {/* Background decoration - responsive */}
+      {/* Enhanced background decoration */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-4 sm:top-10 left-1/4 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-to-br from-blue-100/40 to-pink-100/40 rounded-full blur-2xl sm:blur-3xl animate-pulse"></div>
-        <div className="absolute top-8 sm:top-20 right-1/4 w-16 sm:w-24 h-16 sm:h-24 bg-gradient-to-br from-pink-100/40 to-purple-100/40 rounded-full blur-xl sm:blur-2xl animate-pulse delay-1000"></div>
+        <div className="absolute top-4 sm:top-10 left-1/4 w-32 sm:w-48 h-32 sm:h-48 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-8 sm:top-20 right-1/4 w-24 sm:w-36 h-24 sm:h-36 bg-gradient-to-br from-emerald-500/10 via-cyan-500/10 to-blue-500/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
       
-      <div className="flex justify-center items-center gap-2 sm:gap-4 mb-4 sm:mb-6">
-        <div className="relative">
-          <div className="bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 p-2 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl shadow-lg hover:scale-110 transition-transform duration-300">
-            <Stethoscope className="w-6 sm:w-8 lg:w-10 h-6 sm:h-8 lg:h-10 text-white" />
+      <div className="flex justify-center items-center gap-3 sm:gap-6 mb-6 sm:mb-8">
+        {/* Medical icon with enhanced styling */}
+        <div className="relative group">
+          <div className="bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-600 p-3 sm:p-4 lg:p-5 rounded-2xl sm:rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-110">
+            <Stethoscope className="w-8 sm:w-10 lg:w-12 h-8 sm:h-10 lg:h-12 text-white" />
           </div>
-          <div className="absolute -top-1 -right-1">
-            <Sparkles className="w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5 text-yellow-400 animate-ping" />
+          <div className="absolute -top-2 -right-2 animate-pulse">
+            <div className="bg-gradient-to-r from-yellow-400 to-orange-400 p-1.5 sm:p-2 rounded-full shadow-lg">
+              <Sparkles className="w-3 sm:w-4 lg:w-5 h-3 sm:h-4 lg:h-5 text-white" />
+            </div>
           </div>
+          {/* Pulse ring effect */}
+          <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 border-blue-400/30 animate-ping opacity-20"></div>
         </div>
         
+        {/* Enhanced brand name */}
         <div className="relative">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-700 via-purple-600 to-pink-600 bg-clip-text text-transparent tracking-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black bg-gradient-to-r from-blue-600 via-purple-600 via-indigo-600 to-pink-600 bg-clip-text text-transparent tracking-tight drop-shadow-sm">
             HealPix
           </h1>
-          <div className="absolute -bottom-1 sm:-bottom-2 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-blue-400 to-pink-400 rounded-full opacity-60"></div>
+          {/* Animated underline */}
+          <div className="absolute -bottom-2 sm:-bottom-3 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full opacity-70 animate-pulse"></div>
+          {/* Glow effect */}
+          <div className="absolute inset-0 text-4xl sm:text-5xl lg:text-6xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent blur-sm opacity-30 animate-pulse"></div>
         </div>
         
-        <div className="relative">
-          <Heart className="w-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8 text-pink-500 animate-pulse drop-shadow-lg" />
-          <div className="absolute inset-0 w-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8 bg-pink-200 rounded-full animate-ping opacity-30"></div>
+        {/* Animated heart with enhanced effects */}
+        <div className="relative group">
+          <Heart className="w-7 sm:w-8 lg:w-10 h-7 sm:h-8 lg:h-10 text-pink-500 animate-pulse drop-shadow-xl" />
+          <div className="absolute inset-0 w-7 sm:w-8 lg:w-10 h-7 sm:h-8 lg:h-10 bg-pink-300 rounded-full animate-ping opacity-20"></div>
+          <div className="absolute -top-1 -right-1">
+            <Activity className="w-3 sm:w-4 h-3 sm:h-4 text-red-400 animate-bounce" />
+          </div>
         </div>
       </div>
       
-      <div className="space-y-3 sm:space-y-4 max-w-4xl mx-auto px-4">
-        <p className="text-lg sm:text-xl lg:text-2xl text-gray-700 font-medium mb-3 sm:mb-4">
-          Your AI Medical Assistant is here! 🩺✨
-        </p>
+      <div className="space-y-4 sm:space-y-6 max-w-4xl mx-auto px-4">
+        {/* Enhanced tagline */}
+        <div className="relative">
+          <p className="text-xl sm:text-2xl lg:text-3xl text-gray-700 font-bold mb-4 sm:mb-6 leading-tight">
+            Your AI Medical Assistant is here! 
+            <span className="inline-block ml-2 animate-bounce">🩺✨</span>
+          </p>
+          <div className="absolute inset-0 text-xl sm:text-2xl lg:text-3xl text-gray-400 font-bold blur-sm opacity-20 animate-pulse">
+            Your AI Medical Assistant is here! 🩺✨
+          </div>
+        </div>
         
-        <p className="text-base sm:text-lg text-gray-600 leading-relaxed px-2 sm:px-4">
+        <p className="text-lg sm:text-xl text-gray-600 leading-relaxed px-2 sm:px-6 font-medium">
           Upload a photo of any wound, skin condition, or health concern and get instant, 
-          helpful insights from our advanced AI system
+          helpful insights from our advanced AI system powered by medical expertise
         </p>
         
-        <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-gray-500 bg-blue-50 rounded-full px-4 sm:px-6 py-2 sm:py-3 border border-blue-100 mx-auto max-w-fit">
-          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-          <span>Safe • Private • Instant Analysis</span>
+        {/* Enhanced status badge */}
+        <div className="inline-flex items-center gap-3 text-sm sm:text-base text-gray-600 bg-gradient-to-r from-white/80 via-blue-50/80 to-white/80 backdrop-blur-sm rounded-full px-6 sm:px-8 py-3 sm:py-4 border border-blue-200/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse shadow-lg"></div>
+            <span className="font-semibold text-gray-700">Safe</span>
+          </div>
+          <div className="w-1 h-4 bg-gray-300 rounded-full"></div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full animate-pulse shadow-lg"></div>
+            <span className="font-semibold text-gray-700">Private</span>
+          </div>
+          <div className="w-1 h-4 bg-gray-300 rounded-full"></div>
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-pulse shadow-lg"></div>
+            <span className="font-semibold text-gray-700">Instant Analysis</span>
+          </div>
         </div>
       </div>
     </div>
