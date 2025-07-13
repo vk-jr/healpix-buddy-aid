@@ -1,8 +1,3 @@
-Got it! Here's your **full combined `README.md` content** as a single, clean, copy-pasteable Markdown file — no formatting fragments or code block issues. You can copy the entire content below into your `README.md`:
-
----
-
-````markdown
 # 🩺 Healpix Buddy Aid
 
 **Healpix Buddy Aid** is an AI-powered medical assistant web app that helps users by analyzing medical images and providing basic first aid suggestions. Built using a modern and efficient tech stack, it delivers excellent developer experience and blazing-fast performance.
