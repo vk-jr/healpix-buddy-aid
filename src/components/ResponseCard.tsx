@@ -9,7 +9,49 @@ interface ResponseCardProps {
   uploadedImage: File | null;
 }
 
+const formatResponse = (response: string | null): string => {
+  if (!response) return '';
+  
+  // Extract content after "ai_response":"
+  const aiResponseMatch = response.match(/"ai_response":"([^"]*)"/) || response.match(/"ai_response":\"([^"]*)\"/);
+  let content = aiResponseMatch ? aiResponseMatch[1] : response;
+  
+  // If no match found, try to find just the content after ai_response
+  if (!aiResponseMatch && response.includes('ai_response')) {
+    const parts = response.split('ai_response');
+    if (parts.length > 1) {
+      content = parts[1].replace(/^[:"'\s]+/, '').replace(/[}"'\s]+$/, '');
+    }
+  }
+  
+  // Replace \\n with actual line breaks
+  content = content.replace(/\\n/g, '\n');
+  
+  return content;
+};
+
+const formatTextWithBold = (text: string) => {
+  // Split text by ** markers and create spans for bold text
+  const parts = text.split(/\*\*(.*?)\*\*/g);
+  
+  return parts.map((part, index) => {
+    // Every odd index is the content between ** markers (should be bold)
+    if (index % 2 === 1) {
+      return <strong key={index} className="font-semibold">{part}</strong>;
+    }
+    // Even indices are regular text, preserve line breaks
+    return part.split('\n').map((line, lineIndex, array) => (
+      <span key={`${index}-${lineIndex}`}>
+        {line}
+        {lineIndex < array.length - 1 && <br />}
+      </span>
+    ));
+  });
+};
+
 export const ResponseCard = ({ response, error, onReset, uploadedImage }: ResponseCardProps) => {
+  const formattedResponse = formatResponse(response);
+  
   return (
     <div className="space-y-6">
       {uploadedImage && (
@@ -48,9 +90,13 @@ export const ResponseCard = ({ response, error, onReset, uploadedImage }: Respon
         </div>
         
         <div className={`p-6 rounded-2xl mb-6 ${error ? 'bg-red-50' : 'bg-green-50'}`}>
-          <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
-            {error || response}
-          </p>
+          <div className="text-gray-700 leading-relaxed">
+            {error ? (
+              <p>{error}</p>
+            ) : (
+              <div>{formatTextWithBold(formattedResponse)}</div>
+            )}
+          </div>
         </div>
         
         {!error && (
