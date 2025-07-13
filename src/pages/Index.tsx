@@ -22,7 +22,7 @@ const Index = () => {
       const formData = new FormData();
       formData.append('image', file);
 
-      const result = await fetch('https://razyeryt.app.n8n.cloud/webhook-test/medical-image', {
+      const result = await fetch('https://razyeryt.app.n8n.cloud/webhook/medical-image', {
         method: 'POST',
         body: formData,
       });
